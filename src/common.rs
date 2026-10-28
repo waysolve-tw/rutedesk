@@ -1214,6 +1214,16 @@ pub fn get_app_name() -> String {
 }
 
 #[inline]
+pub fn get_app_display_name() -> String {
+    let name = get_app_name();
+    if name == "RustDesk" {
+        "Rutedesk".to_owned()
+    } else {
+        name
+    }
+}
+
+#[inline]
 pub fn is_rustdesk() -> bool {
     hbb_common::config::APP_NAME.read().unwrap().eq("RustDesk")
 }
